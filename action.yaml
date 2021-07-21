@@ -1,14 +1,25 @@
 # action.yml
 name: 'Hello World'
 description: 'Greet someone and record the time'
+#inputs:
+#  who-to-greet:  # id of input
+#    description: 'Who to greet'
+#    required: true
+#    default: 'World'
+#outputs:
+#  time: # id of output
+#    description: 'The time we greeted you'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  files:
+    description: 'Comma separated string with paths to files and directories to check for existence.'
     required: true
-    default: 'World'
+  allow_failure:
+    description: 'Makes the Action fail on missing files.'
+    default: false
+    required: false
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  files_exists:
+    description: 'Wheter the file(s) exists or not.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
