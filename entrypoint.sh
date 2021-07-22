@@ -2,6 +2,6 @@
 
 echo "Test Execution"
 
-echo "Hello $1"
+echo "Good Morning $1"
 time=$(date)
 echo "::set-output name=time::$time"
